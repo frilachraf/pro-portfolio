@@ -62,14 +62,14 @@ const Timeline3 = ({
   ],
 }: Timeline3Props) => {
   return (
-    <section className="py-32">
-      <div className="container max-w-6xl">
-        <div className="relative grid gap-16 md:grid-cols-2">
-          <div className="top-40 h-fit md:sticky">
-            <h2 className="mt-4 mb-6 text-4xl font-semibold md:text-5xl">
+    <section className="py-32 px-10">
+      <div className="">
+        <div className="relative grid gap-16 lg:grid-cols-3">
+          <div className="top-40 h-fit lg:sticky lg:col-span-1">
+            <h2 className="mt-4 mb-6 text-4xl font-semibold lg:text-5xl">
               {heading}
             </h2>
-            <p className="font-medium text-muted-foreground md:text-xl">
+            <p className="font-medium text-muted-foreground lg:text-xl">
               {description}
             </p>
             <div className="mt-8 flex flex-col gap-4 lg:flex-row">
@@ -81,7 +81,7 @@ const Timeline3 = ({
               </Button>
             </div>
           </div>
-          <div className="flex flex-col gap-12 md:gap-20">
+          <div className="flex flex-col gap-12 lg:gap-20 lg:col-span-2">
             {features.map((feature, index) => (
               <div key={index} className="rounded-xl border p-2">
                 {/* <img

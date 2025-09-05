@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer: React.FC = () => {
     return (
-        <footer style={{ padding: '1rem', textAlign: 'center', background: '#f5f5f5' }}>
+        <footer >
             <p>&copy; {new Date().getFullYear()} My App. All rights reserved.</p>
         </footer>
     );

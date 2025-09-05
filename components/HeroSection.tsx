@@ -15,15 +15,6 @@ const HeroSection: React.FC<HeroSectionProps> = ({
 }) => {
     return (
         <section
-            style={{
-                background: backgroundImageUrl
-                    ? `url(${backgroundImageUrl}) center/cover no-repeat`
-                    : '#f5f5f5',
-                padding: '80px 20px',
-                color: '#222',
-                textAlign: 'center',
-                position: 'relative',
-            }}
             className='h-screen'
         >
             <div style={{ maxWidth: 800, margin: '0 auto' }}>
