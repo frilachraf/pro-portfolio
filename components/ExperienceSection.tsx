@@ -1,29 +1,58 @@
-import React from 'react';
+'use client'
+import {
+  Button,
+  Timeline,
+  TimelineBody,
+  TimelineContent,
+  TimelineItem,
+  TimelinePoint,
+  TimelineTime,
+  TimelineTitle,
+} from "flowbite-react";
+import { HiArrowNarrowRight, HiCalendar } from "react-icons/hi";
 
-interface Experience {
-    company: string;
-    role: string;
-    period: string;
-    description: string;
+export function ExperienceSection({experiences}: {experiences: any[]}) {
+  return (
+    <div className="mx-10">
+        <Timeline>
+      <TimelineItem>
+        <TimelinePoint icon={HiCalendar}/>
+        <TimelineContent>
+          <TimelineTime>February 2022</TimelineTime>
+          <TimelineTitle>Application UI code in Tailwind CSS</TimelineTitle>
+          <TimelineBody>
+            Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order
+            E-commerce & Marketing pages.
+          </TimelineBody>
+          <Button color="gray">
+            Learn More
+            <HiArrowNarrowRight className="ml-2 h-3 w-3" />
+          </Button>
+        </TimelineContent>
+      </TimelineItem>
+      <TimelineItem>
+        <TimelinePoint icon={HiCalendar}/>
+        <TimelineContent>
+          <TimelineTime>March 2022</TimelineTime>
+          <TimelineTitle>Marketing UI design in Figma</TimelineTitle>
+          <TimelineBody>
+            All of the pages and components are first designed in Figma and we keep a parity between the two versions
+            even as we update the project.
+          </TimelineBody>
+        </TimelineContent>
+      </TimelineItem>
+      <TimelineItem>
+        <TimelinePoint icon={HiCalendar}/>
+        <TimelineContent>
+          <TimelineTime>April 2022</TimelineTime>
+          <TimelineTitle>E-Commerce UI code in Tailwind CSS</TimelineTitle>
+          <TimelineBody>
+            Get started with dozens of web components and interactive elements built on top of Tailwind CSS.
+          </TimelineBody>
+        </TimelineContent>
+      </TimelineItem>
+    </Timeline>
+    </div>
+  );
 }
-
-interface ExperienceSectionProps {
-    experiences: Experience[];
-}
-
-const ExperienceSection: React.FC<ExperienceSectionProps> = ({ experiences }) => (
-    <section>
-        <h2>Experience</h2>
-        <ul>
-            {experiences.map((exp, idx) => (
-                <li key={idx}>
-                    <h3>{exp.role} @ {exp.company}</h3>
-                    <span>{exp.period}</span>
-                    <p>{exp.description}</p>
-                </li>
-            ))}
-        </ul>
-    </section>
-);
-
 export default ExperienceSection;

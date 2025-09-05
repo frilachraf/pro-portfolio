@@ -1,4 +1,5 @@
 import React from 'react';
+import { Timeline3 } from './AppTimeline3';
 
 interface Project {
     title: string;
@@ -13,6 +14,7 @@ interface ProjectsSectionProps {
 const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) => (
     <section>
         <h2>Projects</h2>
+        <Timeline3 />
         <ul>
             {projects.map((project, idx) => (
                 <li key={idx}>
