@@ -1,4 +1,5 @@
 import React from 'react';
+import Hero06 from './hero-06/hero-06';
 
 interface HeroSectionProps {
     title?: string;
@@ -15,13 +16,9 @@ const HeroSection: React.FC<HeroSectionProps> = ({
 }) => {
     return (
         <section
-            className='h-screen'
+            className=''
         >
-            <div style={{ maxWidth: 800, margin: '0 auto' }}>
-                <h1 style={{ fontSize: '3rem', marginBottom: '1rem' }}>{title}</h1>
-                <p style={{ fontSize: '1.5rem', marginBottom: '2rem' }}>{subtitle}</p>
-                {children}
-            </div>
+           <Hero06 />
         </section>
     );
 };

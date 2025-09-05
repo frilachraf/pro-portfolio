@@ -26,9 +26,9 @@ export function AppCarousel({items}: {items?: any[]}) {
       </Carousel>
       :
       
-      <div className="border aspect-video w-full">
+      <div className="aspect-video w-full">
         {items && 
-          <img src={items[0]} alt="" className="h-full w-full object-cover"/>
+          <img src={items[0]} alt="" className="h-full w-full object-cover rounded-lg"/>
         }
       </div>
       }
