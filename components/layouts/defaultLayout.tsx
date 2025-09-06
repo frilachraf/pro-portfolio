@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react';
 import { ThemeProvider } from '../theme-provider';
 import Header from '../Header';
-import { Footer } from 'flowbite-react';
+import Footer from '../Footer';
 
 type DefaultLayoutProps = {
     children: ReactNode;

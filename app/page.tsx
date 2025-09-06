@@ -9,7 +9,7 @@ import { Button } from "flowbite-react";
 import { AppCarousel } from "@/components/AppCarousel";
 import Hero47 from "@/components/MobileAppSection";
 import DefaultLayout from "@/components/layouts/defaultLayout";
-
+import ContactSection from "@/components/ContactSection";
 
 export default function Home() {
   return (
@@ -17,11 +17,9 @@ export default function Home() {
       <HeroSection />
       <ExperienceSection experiences={[]} />
       <ProjectsSection projects={[]} />
-      <SkillsSection skills={[]} />
-      <Button>Flowbite button</Button>
-      <AppCarousel items={['1', "2"]} />
-      <Hero47 />
-
+      <SkillsSection skills={[]} title="What Tools I use" description="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto consectetur repellat ipsum, doloribus expedita architecto!" />
+      <ContactSection />
+    
     </DefaultLayout>
   );
 }

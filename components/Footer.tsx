@@ -1,10 +1,11 @@
 import React from 'react';
+import FooterComponent from './footer-05/footer-05';
 
 const Footer: React.FC = () => {
     return (
-        <footer >
-            <p>&copy; {new Date().getFullYear()} My App. All rights reserved.</p>
-        </footer>
+        <>
+        <FooterComponent />
+        </>
     );
 };
 
