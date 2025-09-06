@@ -33,7 +33,7 @@ const experiences = [
 
 export default function AppTimeline4() {
   return (
-    <div className="max-w-screen-sm mx-auto py-12 md:py-20 px-6">
+    <div className="">
       <div className="relative ml-4">
         {/* Timeline line */}
         <div className="absolute left-0 inset-y-0 border-l-2" />

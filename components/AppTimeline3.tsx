@@ -74,7 +74,7 @@ const AppTimeline3 = ({
   },
   }
   return (
-    <section className="py-32 px-10">
+    <section className="">
       <div className="">
         <div className="relative grid gap-16 lg:grid-cols-3">
           <div className="top-40 h-fit lg:sticky lg:col-span-1">

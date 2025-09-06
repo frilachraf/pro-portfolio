@@ -19,8 +19,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = async ({ }) =>
     const { data: projects } = await supabase.from("projects").select();
 
     return  (
-    <section>
-        <h2>Projects</h2>
+    <section className='w-full max-w-screen-xl mx-auto px-6 xl:px-0'>
         {projects &&
         <AppTimeline3 data={projects} />
         }
