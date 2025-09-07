@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+import colors  from 'tailwindcss/colors';
+
 module.exports = {
   content: [
     "./app/**/*.{js,ts,jsx,tsx}",   // For App Router
@@ -7,10 +9,10 @@ module.exports = {
   ],
   theme: {
     extend: {
-        colors:{
-            primary : '#92eb34',
-        }
-    }, // customize theme here (colors, fonts, etc.)
+      colors: {
+        primary: colors.zinc,
+      },
+    },
   },
   plugins: [],
 }

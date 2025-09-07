@@ -16,7 +16,7 @@ interface ProjectsSectionProps {
 const ProjectsSection: React.FC<ProjectsSectionProps> = async ({ }) => 
   { 
     const supabase = await createClient();
-    const { data: projects } = await supabase.from("projects").select();
+    const { data: projects } = await supabase.from("projects").select('').eq('profile_id', process.env.NEXT_PUBLIC_SUPABASE_CLIENT_USER_ID);
 
     return  (
     <section className='w-full max-w-screen-xl mx-auto px-6 xl:px-0'>

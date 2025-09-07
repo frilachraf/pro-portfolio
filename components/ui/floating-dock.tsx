@@ -191,3 +191,6 @@ function IconContainer({
     </a>
   );
 }
+
+
+export { FloatingDockDesktop, FloatingDockMobile };

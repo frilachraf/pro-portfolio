@@ -23,7 +23,7 @@ const SkillsSection: React.FC<SkillsSectionProps> = async ({
   description = "",
 }) => {
   const TriggerclassName ="p-4 w-full justify-start"
-      "w-full justify-center data-[state=active]:bg-transparent data-[state=active]:font-medium data-[state=active]:text-foreground rounded-none px-4 py-2  data-[state=active]:shadow-none text-foreground/50 dark:text-muted-foreground border-b-2 border-transparent data-[state=active]:border-b-primary";
+      "w-full justify-center data-[state=active]:bg-transparent data-[state=active]:font-medium data-[state=active]:text-foreground rounded-none px-4 py-2  data-[state=active]:shadow-none text-foreground/50 dark:text-muted-foreground border-b-2 border-transparent data-[state=active]:border-b-primary data-[state=active]:bg-red-500 hover:bg-accent hover:text-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-background";
   const supabase = await createClient();
 
   const { data: technologies } = await supabase.from("technologies").select();
@@ -106,7 +106,7 @@ export default SkillsSection;
 
 const  TechComponent = ({data}:any)=>{
     return (
-        <div className="bg-background rounded-lg px-4 py-3 border flex items-center gap-2">
+        <div className="bg-background rounded-lg px-4 py-2 border flex items-center gap-2">
                       {data.icon && (
                         <div className="bg- rounded-full bg-white p-2">
                             <img

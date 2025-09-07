@@ -18,7 +18,9 @@ export default function Home() {
       <ExperienceSection experiences={[]} title="Experiences" />
       <ProjectsSection projects={[]} />
       <SkillsSection skills={[]} title="What Tools I use" description="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto consectetur repellat ipsum, doloribus expedita architecto!" />
-      <ContactSection />
+      <div id="contact">
+        <ContactSection />
+      </div>
     
     </DefaultLayout>
   );

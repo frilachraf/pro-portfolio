@@ -87,18 +87,18 @@ const Header: React.FC = () => {
 
   const navItems = [
     {
-      name: "Home",
-      link: "/",
+      title: "About Me",
+      link: "",
       icon: <IconHome className="h-4 w-4 text-neutral-500 dark:text-white" />,
     },
     {
-      name: "About",
-      link: "/about",
+      title: "Experience",
+      link: "#about",
       icon: <IconUser className="h-4 w-4 text-neutral-500 dark:text-white" />,
     },
     {
-      name: "Contact",
-      link: "/contact",
+      title: "Projects",
+      link: "#contact",
       icon: (
         <IconMessage className="h-4 w-4 text-neutral-500 dark:text-white" />
       ),
@@ -110,7 +110,7 @@ const Header: React.FC = () => {
             mobileClassName="translate-y-20" // only for demo, remove for production
             items={links}
         /> */}
-        <FloatingNav navItems={navItems} />
+        <FloatingNav navItems={navItems} className='' />
             <div className="">
                 
             </div>
