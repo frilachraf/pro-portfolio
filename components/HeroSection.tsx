@@ -21,7 +21,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         <section
             className=''
         >
-           <Hero06 badge={"New portfolio"} title={title} description={description} buttonText={buttonText} button2Text={button2Text}/>
+           <Hero06 title={title} description={description} buttonText={buttonText} button2Text={button2Text}/>
         </section>
     );
 };

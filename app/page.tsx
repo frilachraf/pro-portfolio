@@ -10,8 +10,10 @@ import { AppCarousel } from "@/components/AppCarousel";
 import Hero47 from "@/components/MobileAppSection";
 import DefaultLayout from "@/components/layouts/defaultLayout";
 import ContactSection from "@/components/ContactSection";
+import { useTranslations } from "next-intl";
 
 export default function Home() {
+  const t = useTranslations('HomePage');
   return (
     <DefaultLayout >
       <HeroSection />

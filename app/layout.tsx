@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import { Button } from "@/components/ui/button";
 import { ThemeProvider } from "@/components/theme-provider"
+import {NextIntlClientProvider} from 'next-intl';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,7 +33,8 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         suppressHydrationWarning
       >
-                <>{children}</>
+                        <NextIntlClientProvider>{children}</NextIntlClientProvider>
+
 
 
       </body>

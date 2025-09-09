@@ -89,18 +89,18 @@ const Header: React.FC = () => {
     {
       title: "About Me",
       link: "",
-      icon: <IconHome className="h-4 w-4 text-neutral-500 dark:text-white" />,
+      icon: <IconHome className="h-4 w-4 " />,
     },
     {
       title: "Experience",
       link: "#about",
-      icon: <IconUser className="h-4 w-4 text-neutral-500 dark:text-white" />,
+      icon: <IconUser className="h-4 w-4 " />,
     },
     {
       title: "Projects",
       link: "#contact",
       icon: (
-        <IconMessage className="h-4 w-4 text-neutral-500 dark:text-white" />
+        <IconMessage className="h-4 w-4 " />
       ),
     },
   ];
