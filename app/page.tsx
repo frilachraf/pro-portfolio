@@ -1,3 +1,4 @@
+
 import ExperienceSection from "@/components/ExperienceSection";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
@@ -12,11 +13,15 @@ import DefaultLayout from "@/components/layouts/defaultLayout";
 import ContactSection from "@/components/ContactSection";
 import { useTranslations } from "next-intl";
 import TestComponent from "@/components/TestComponent";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import ScrollProgressBar from "@/components/ScrollBarTrigger";
 
 export default function Home() {
+ 
   const t = useTranslations('HomePage');
   return (
     <DefaultLayout >
+      <ScrollProgressBar />
       <HeroSection />
       <ExperienceSection experiences={[]} title="Experiences" />
       <ProjectsSection projects={[]} />

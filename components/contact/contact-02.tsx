@@ -29,7 +29,7 @@ const ContactPage = () => (
               Our friendly team is here to help.
             </p>
             <Link
-              className="font-medium text-primary"
+              className="font-medium text"
               href="mailto:akashmoradiya3444@gmail.com"
             >
               akashmoradiya3444@gmail.com
@@ -43,7 +43,7 @@ const ContactPage = () => (
             <p className="my-2.5 text-muted-foreground">
               Our friendly team is here to help.
             </p>
-            <Link className="font-medium text-primary" href="#">
+            <Link className="font-medium text" href="#">
               Start new chat
             </Link>
           </div>
@@ -56,7 +56,7 @@ const ContactPage = () => (
               Come say hello at our office HQ.
             </p>
             <Link
-              className="font-medium text-primary"
+              className="font-medium text"
               href="https://map.google.com"
               target="_blank"
             >
@@ -72,7 +72,7 @@ const ContactPage = () => (
               Mon-Fri from 8am to 5pm.
             </p>
             <Link
-              className="font-medium text-primary"
+              className="font-medium text"
               href="tel:akashmoradiya3444@gmail.com"
             >
               +1 (555) 000-0000
@@ -81,7 +81,7 @@ const ContactPage = () => (
         </div>
 
         {/* Form */}
-        <Card className="bg-accent shadow-none">
+        <Card className="bg-muted shadow-">
           <CardContent className="p-6 md:p-10">
             <form>
               <div className="grid md:grid-cols-2 gap-x-8 gap-y-5">
@@ -90,7 +90,7 @@ const ContactPage = () => (
                   <Input
                     placeholder="First name"
                     id="firstName"
-                    className="mt-1.5 bg-white h-11 shadow-none"
+                    className="mt-1.5 bg-background h-11 shadow-none"
                   />
                 </div>
                 <div className="col-span-2 sm:col-span-1">
@@ -98,7 +98,7 @@ const ContactPage = () => (
                   <Input
                     placeholder="Last name"
                     id="lastName"
-                    className="mt-1.5 bg-white h-11 shadow-none"
+                    className="mt-1.5 bg-background h-11 shadow-none"
                   />
                 </div>
                 <div className="col-span-2">
@@ -107,7 +107,7 @@ const ContactPage = () => (
                     type="email"
                     placeholder="Email"
                     id="email"
-                    className="mt-1.5 bg-white h-11 shadow-none"
+                    className="mt-1.5 bg-background h-11 shadow-none"
                   />
                 </div>
                 <div className="col-span-2">
@@ -115,7 +115,7 @@ const ContactPage = () => (
                   <Textarea
                     id="message"
                     placeholder="Message"
-                    className="mt-1.5 bg-white shadow-none"
+                    className="mt-1.5 bg-background shadow-none"
                     rows={6}
                   />
                 </div>
