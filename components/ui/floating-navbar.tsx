@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   motion,
   AnimatePresence,
@@ -21,6 +21,9 @@ import { useTheme } from "next-themes"
 
 import { Button } from "@/components/ui/button"
 
+import { gsap } from "gsap";
+    
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
 export const FloatingNav = ({
   navItems,
@@ -50,12 +53,29 @@ export const FloatingNav = ({
         if (direction < 0) {
           setVisible(true);
         } else {
-          setVisible(false);
+          // setVisible(false);
+          setVisible(true);
         }
       }
     }
   });
+  const smoothNavigate = (id: string) => {
+    // gsap.to(window, { duration: 2, scrollTo: { y: id, offsetY: 50 } });
+    gsap.to(window, 
+      { 
+        duration: 1,
+        scrollTo: { y: id, autoKill: true },
+        ease: "power2.out"
+        
+      });
+    console.log("Navigating to:", id);  
+  }
+  useEffect(() => {
+    gsap.registerPlugin(ScrollToPlugin);
+    
+    
 
+  }, []);
   return (
     <AnimatePresence mode="wait">
       <motion.div
@@ -78,9 +98,9 @@ export const FloatingNav = ({
         {navItems.map((navItem: any, idx: number) => (
           <a
             key={`link=${idx}`}
-            href={navItem.link}
+            onClick={(e) => {smoothNavigate(navItem.link)}}
             className={cn(
-              "relative text-neutral-50 items-center flex space-x-1 dark:text-neutral-600"
+              "relative text-neutral-50 items-center flex space-x-1 dark:text-neutral-600 cursor-pointer "
             )}
           >
             <span className="block sm:hidden-">{navItem.icon}</span>
@@ -94,7 +114,7 @@ export const FloatingNav = ({
         <div className="z-[12]">
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="outline" size="icon" className="rounded-full">
+              <Button  size="icon" className="rounded-full cursor-pointer">
                 <Sun className="h-[1.2rem] w-[1.2rem] scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" />
                 <Moon className="absolute h-[1.2rem] w-[1.2rem] scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0" />
                 <span className="sr-only">Toggle theme</span>

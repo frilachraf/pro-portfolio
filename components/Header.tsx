@@ -1,7 +1,7 @@
 "use client"
 import React from 'react';
 
-import { Moon, Sun } from "lucide-react"
+import { HeadphoneOffIcon, HeadphonesIcon, Moon, Sun, ToolCaseIcon } from "lucide-react"
 import { useTheme } from "next-themes"
 
 import { Button } from "@/components/ui/button"
@@ -87,20 +87,34 @@ const Header: React.FC = () => {
 
   const navItems = [
     {
-      title: "About Me",
-      link: "",
+      title: "",
+      link: "#about",
       icon: <IconHome className="h-4 w-4 " />,
     },
     {
       title: "Experience",
-      link: "#about",
+      link: "#experiences",
       icon: <IconUser className="h-4 w-4 " />,
     },
     {
       title: "Projects",
-      link: "#contact",
+      link: "#projects",
       icon: (
         <IconMessage className="h-4 w-4 " />
+      ),
+    },
+    {
+      title: "Skills",
+      link: "#skills",
+      icon: (
+        <ToolCaseIcon className="h-4 w-4 " />
+      ),
+    },
+    {
+      title: "",
+      link: "#contact",
+      icon: (
+        <HeadphonesIcon className="h-4 w-4 " />
       ),
     },
   ];
@@ -110,10 +124,8 @@ const Header: React.FC = () => {
             mobileClassName="translate-y-20" // only for demo, remove for production
             items={links}
         /> */}
-        <FloatingNav navItems={navItems} className='' />
-            <div className="">
-                
-            </div>
+
+        <FloatingNav navItems={navItems} className="" />
         </header>
     );
 };

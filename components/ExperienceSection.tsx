@@ -1,25 +1,24 @@
-'use client'
-import {
-  Button,
-  Timeline,
-  TimelineBody,
-  TimelineContent,
-  TimelineItem,
-  TimelinePoint,
-  TimelineTime,
-  TimelineTitle,
-} from "flowbite-react";
-import { HiArrowNarrowRight, HiCalendar } from "react-icons/hi";
-import AppTimeline4 from "./timeline-04/timeline-04";
 
-export function ExperienceSection({title,experiences}: {experiences: any[], title?: string}) {
+import AppTimeline4 from "./timeline-04/timeline-04";
+import { supabase } from "@/lib/supabase/client";
+
+export async function ExperienceSection({title,experiences}: {experiences: any[], title?: string}) {
   
+  const { data: posts, error } = await supabase.from('experiences').select();
+
+  if (error || !posts) {
+    return <p>Failed to load posts.</p>;
+  }
+
+  if (posts.length === 0) {
+    return <p>No posts found.</p>;
+  }
   return (
-    <section className="w-full max-w-screen-xl mx-auto px-6 xl:px-0 min-h-screen py-10">
+    <section id="experiences" className="w-full max-w-screen-xl mx-auto px-6 xl:px-0 min-h-screen py-10">
         <h2 className="mt-4 mb-10 text-4xl font-semibold lg:text-5xl">
           {title}
         </h2>
-        <AppTimeline4 />
+        <AppTimeline4 data={posts}/>
     </section>
   );
 }

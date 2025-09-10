@@ -34,7 +34,7 @@ const SkillsSection: React.FC<SkillsSectionProps> = async ({
   const designs = technologies?.filter((tech) => tech.category === "design");
   const otherTools = technologies?.filter((tech) => !["frontend","backend","design"].includes(tech.category));
   return (
-    <section className="px-10 py-20 text-s rounded-3xl bg- flex flex-col w-full max-w-screen-xl mx-auto px-6 xl:px-0">
+    <section id="skills" className="py-20 text-s rounded-3xl bg- flex flex-col w-full max-w-screen-xl mx-auto px-6 xl:px-0">
       <h1 className="mt-4 mb-6 text-4xl font-semibold lg:text-5xl tracking-tight">
         {title}
       </h1>
@@ -66,33 +66,33 @@ const SkillsSection: React.FC<SkillsSectionProps> = async ({
           <TabsContent value="design">
             <div className="flex gap-4 flex-wrap justify-start">
               {designs &&
-                designs.map((tech) => (<TechComponent data={tech}/>))}
+                designs.map((tech,i) => (<TechComponent key={i} data={tech}/>))}
             </div>
           </TabsContent>
           <TabsContent value="backend">
             <div className="flex gap-4 flex-wrap justify-start">
               {backends &&
-                backends.map((tech) => (<TechComponent data={tech}/>))}
+                backends.map((tech,i) => (<TechComponent key={i} data={tech}/>))}
             </div>
           </TabsContent>
           <TabsContent value="frontend">
             <div className="flex gap-4 flex-wrap justify-start">
               {frontends &&
-                frontends.map((tech) => (<TechComponent data={tech}/>))}
+                frontends.map((tech,i) => (<TechComponent key={i} data={tech}/>))}
             </div>
             {/* {<pre>{JSON.stringify(technologies, null, 2)}</pre>} */}
           </TabsContent>
           <TabsContent value="other">
             <div className="flex gap-4 flex-wrap justify-start">
               {otherTools &&
-                otherTools.map((tech) => (<TechComponent data={tech}/>))}
+                otherTools.map((tech,i) => (<TechComponent key={i} data={tech}/>))}
             </div>
             {/* {<pre>{JSON.stringify(technologies, null, 2)}</pre>} */}
           </TabsContent>
            <TabsContent value="all">
             <div className="flex gap-4 flex-wrap justify-start">
               {technologies &&
-                technologies.map((tech) => (<TechComponent data={tech}/>))}
+                technologies.map((tech,i) => (<TechComponent key={i} data={tech}/>))}
             </div>
           </TabsContent>
         </div>

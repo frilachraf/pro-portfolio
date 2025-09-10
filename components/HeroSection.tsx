@@ -20,6 +20,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
     return (
         <section
             className=''
+            id='about'
         >
            <Hero06 title={title} description={description} buttonText={buttonText} button2Text={button2Text}/>
         </section>
