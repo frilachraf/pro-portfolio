@@ -11,6 +11,7 @@ import Hero47 from "@/components/MobileAppSection";
 import DefaultLayout from "@/components/layouts/defaultLayout";
 import ContactSection from "@/components/ContactSection";
 import { useTranslations } from "next-intl";
+import TestComponent from "@/components/TestComponent";
 
 export default function Home() {
   const t = useTranslations('HomePage');
@@ -23,7 +24,7 @@ export default function Home() {
       <div id="contact">
         <ContactSection />
       </div>
-    
+      <TestComponent />
     </DefaultLayout>
   );
 }
