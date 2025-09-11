@@ -2,39 +2,68 @@ import { Separator } from "@/components/ui/separator";
 import {
   DribbbleIcon,
   GithubIcon,
+  HeadphonesIcon,
+  ToolCaseIcon,
   TwitchIcon,
   TwitterIcon,
 } from "lucide-react";
 import Link from "next/link";
+import {
+  FaDiscord,
+  FaFacebookF,
+  FaGithub,
+  FaInstagram,
+  FaInstagramSquare,
+  FaLinkedinIn,
+} from "react-icons/fa";
+import { IconHome, IconMessage, IconUser } from "@tabler/icons-react";
 
-const footerLinks = [
-  {
-    title: "Overview",
-    href: "#",
-  },
-  {
-    title: "Features",
-    href: "#",
-  },
-  {
-    title: "Pricing",
-    href: "#",
-  },
-  {
-    title: "Careers",
-    href: "#",
-  },
-  {
-    title: "Help",
-    href: "#",
-  },
-  {
-    title: "Privacy",
-    href: "#",
-  },
-];
 
-const FooterComponent = () => {
+interface Profile {
+  github?: string;
+}
+const FooterComponent = ({ profile }: any) => {
+  
+  const navItems = [
+    {
+      title: "",
+      link: "#about",
+      accessKey: "a",
+      icon: <IconHome className="h-4 w-4 " />,
+    },
+    {
+      title: "Experience",
+      link: "#experiences",
+      accessKey: "e",
+      icon: <IconUser className="h-4 w-4 " />,
+    },
+    {
+      title: "Projects",
+      link: "#projects",
+      accessKey: "p",
+      icon: (
+        <IconMessage className="h-4 w-4 " />
+      ),
+    },
+    {
+      title: "Skills",
+      link: "#skills",
+      accessKey: "s",
+      icon: (
+        <ToolCaseIcon className="h-4 w-4 " />
+      ),
+    },
+    {
+      title: "Contact",
+      link: "#contact",
+      accessKey: "c",
+      icon: (
+        <HeadphonesIcon className="h-4 w-4 " />
+      ),
+    },
+  ];
+
+  
   return (
     <div className="flex flex-col">
       <footer>
@@ -42,14 +71,14 @@ const FooterComponent = () => {
           <div className="py-12 flex flex-col justify-start items-center">
             {/* Logo */}
             <div className="flex gap-2 items-center">
-            <img src="./images/logo.svg" alt="" className="h-8"/>
+              <img src="./images/logo.svg" alt="" className="h-8" />
             </div>
 
             <ul className="mt-6 flex items-center gap-4 flex-wrap">
-              {footerLinks.map(({ title, href }) => (
+              {navItems.map(({ title, link }) => (
                 <li key={title}>
                   <Link
-                    href={href}
+                    href={link}
                     className="text-muted-foreground hover:text-foreground font-medium"
                   >
                     {title}
@@ -62,26 +91,41 @@ const FooterComponent = () => {
           <div className="py-8 flex flex-col-reverse sm:flex-row items-center justify-between gap-x-2 gap-y-5 px-6 xl:px-0">
             {/* Copyright */}
             <span className="text-muted-foreground">
-              &copy; {new Date().getFullYear()}{" "}
-              <Link href="/" target="_blank">
-                Shadcn UI Blocks
+              &copy; 2025 | &nbsp; 
+              {profile?.email &&
+              <Link href={`mailto:${profile?.email}`} target="_blank">
+                {profile?.email}
               </Link>
-              . All rights reserved.
+              }
+               
             </span>
 
             <div className="flex items-center gap-5 text-muted-foreground">
-              <Link href="#" target="_blank">
-                <TwitterIcon className="h-5 w-5" />
-              </Link>
-              <Link href="#" target="_blank">
-                <DribbbleIcon className="h-5 w-5" />
-              </Link>
-              <Link href="#" target="_blank">
-                <TwitchIcon className="h-5 w-5" />
-              </Link>
-              <Link href="#" target="_blank">
-                <GithubIcon className="h-5 w-5" />
-              </Link>
+              {profile?.facebook && (
+                <Link href={profile?.facebook} target="_blank">
+                  <FaFacebookF className="h-5 w-5" />
+                </Link>
+              )}
+              {profile?.instagram && (
+                <Link href={profile?.instagram} target="_blank">
+                  <FaInstagram className="h-5 w-5" />
+                </Link>
+              )}
+              {profile?.discord && (
+                <Link href={profile?.discord} target="_blank">
+                  <FaDiscord className="h-5 w-5" />
+                </Link>
+              )}
+              {profile?.linkedin && (
+                <Link href={profile?.linkedin} target="_blank">
+                  <FaLinkedinIn className="h-5 w-5" />
+                </Link>
+              )}
+              {profile?.github && (
+                <Link href={profile?.github} target="_blank">
+                  <FaGithub className="h-5 w-5" />
+                </Link>
+              )}
             </div>
           </div>
         </div>

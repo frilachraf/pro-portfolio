@@ -36,8 +36,8 @@ export default function ScrollProgressBar() {
     <div className="fixed top-[50vh] -translate-y-[50%] w-[10px] right-4 bg-muted h-[30vh] border rounded-full">
     <div
         ref={progressBarRef}
-        style={{ height: "0%", backgroundColor: "#4caf50", width: "100%" }}
-        className="rounded-full"
+        style={{ height: "0%", width: "100%" }}
+        className="rounded-full bg-primary"
       />
     </div>
     </>

@@ -43,11 +43,7 @@ const HomePage = async () => {
 
 
       <div className=""></div>
-      <SimpleDisplay >
-        <div className="">
-          <h1 className="text-5xl">Hi this a simple animation</h1>
-        </div>
-      </SimpleDisplay>
+      
     </DefaultLayout>
     </>
   );

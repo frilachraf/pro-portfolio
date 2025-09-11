@@ -80,8 +80,8 @@ const ProjectsTimeline = ({ data }: Timeline3Props) => {
           </div>
           <div className="flex flex-col gap-12 lg:gap-20 lg:col-span-2">
             {data &&
-              data.map((project, index) => (
-                <SimpleDisplay >
+              data.map((project: Project, index) => (
+                <SimpleDisplay key={index}>
                   <div key={index} className="rounded-xl border p-2">
                   {/* <img
                   src={feature.image}
@@ -110,10 +110,14 @@ const ProjectsTimeline = ({ data }: Timeline3Props) => {
                         </Button>
                        
                         
-                        <Button disabled={!project.link} size="icon" variant={'outline'} className="border-none- rounded-full aspect-square">
+                        {project.link && 
+                        <Link href={project?.link} target="_blank">
+                          <Button disabled={!project.link} size="icon" variant={'outline'} className="border-none- rounded-full aspect-square">
                       
                         <AiOutlineLink />
                         </Button>
+                        </Link >
+                        }
                         
                       </div>
                     </div>

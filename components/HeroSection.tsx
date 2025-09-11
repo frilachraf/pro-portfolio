@@ -26,7 +26,7 @@ const HeroSection: React.FC<HeroSectionProps> = async ({
             <Hero06 title={profile?.title} headline={profile?.headline} description={profile?.Subline} buttonText={'get Started'} button2Text={'watch demo'}/>
             }
             <div className="absolute bottom-0 w-full left-0 right-0 flex items-center justify-center">
-                <CgMouse className='-translate-y-10 text-3xl lg:text-7xl animate-bounce text-primary '/>
+                <CgMouse className='-translate-y-10 text-3xl sm:text-4xl animate-bounce text-primary '/>
             </div>
         </section>
     );

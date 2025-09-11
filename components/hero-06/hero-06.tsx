@@ -5,6 +5,7 @@ import { BackgroundPattern } from "./background-pattern";
 import { title } from "process";
 import { TextGenerateEffect } from "../ui/text-generate-effect";
 import { PixelatedCanvas } from "../ui/pixelated-canvas";
+import Image from "next/image";
 
 
 
@@ -48,14 +49,20 @@ const Hero06 = ({badge,title,description,buttonText,button2Text, headline}: hero
       <div className="col-span-1 flex justify-center-  items-center bg-">
         
       {/* <canvas className="bg-primary rounded-full absolute -z-8 translate-" width={310} height={310}  />   */}
-      <PixelatedCanvas
-        src="./images/profile.jpg"
+      
+      <div className="">
+        <Image src='/images/profile.jpg' alt="fril achraf" width={310} height={310} className="rounded-full"/>
+
+
+      </div>
+      {/* <PixelatedCanvas
+        src="./images/profile.png"
         width={310}
         height={310}
-        cellSize={10} //3
+        cellSize={3} //3
         dotScale={1} //1
       
-        shape="square"
+        shape="circle"
         // backgroundColor="#000000"
         dropoutStrength={0.3}
         interactive
@@ -68,9 +75,10 @@ const Hero06 = ({badge,title,description,buttonText,button2Text, headline}: hero
         jitterSpeed={4}
         sampleAverage
         // tintColor="#63b3ee5"
+        // backgroundColor="bg-white"
         tintStrength={0.2}
-        className="rounded-full aspect-square border-primary border-5"
-      />
+        className="rounded-full aspect-square bg-neutral-800"
+      /> */}
       </div>
     </div>
   );
