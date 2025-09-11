@@ -91,9 +91,9 @@ const Header: React.FC = () => {
       <div className="flex gap-2 px-2 fixed top-10 right-10 w-fit  p-2 rounded-full z-[10]">
         <Drawer>
           <DrawerTrigger>
-            <div accessKey="f" className='px-4 relative  items-center flex space-x-1  font-medium cursor-pointer '>
+            {/* <div accessKey="f" className='px-4 relative  items-center flex space-x-1  font-medium cursor-pointer '>
               <HeadphonesIcon className="h-4 w-4 " />
-            </div>
+            </div> */}
           </DrawerTrigger>
           <DrawerContent>
             <DrawerHeader>

@@ -8,6 +8,7 @@ import DefaultLayout from "@/components/layouts/defaultLayout";
 import ContactSection from "@/components/ContactSection";
 import ScrollProgressBar from "@/components/ScrollBarTrigger";
 import { createClient } from '@/lib/supabase/server';
+import SimpleDisplay from './animations/simple-display';
 const HomePage = async () => {
     
     const supabase = await createClient();
@@ -39,6 +40,14 @@ const HomePage = async () => {
       <div id="contact">
         <ContactSection />
       </div>
+
+
+      <div className=""></div>
+      <SimpleDisplay >
+        <div className="">
+          <h1 className="text-5xl">Hi this a simple animation</h1>
+        </div>
+      </SimpleDisplay>
     </DefaultLayout>
     </>
   );

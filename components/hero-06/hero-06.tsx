@@ -47,16 +47,16 @@ const Hero06 = ({badge,title,description,buttonText,button2Text, headline}: hero
       </div>
       <div className="col-span-1 flex justify-center-  items-center bg-">
         
-      <canvas className="bg-primary rounded-xl absolute -z-8 translate-8" width={300} height={300}  />  
+      {/* <canvas className="bg-primary rounded-full absolute -z-8 translate-" width={310} height={310}  />   */}
       <PixelatedCanvas
         src="./images/profile.jpg"
         width={310}
         height={310}
-        cellSize={3}
-        dotScale={1}
+        cellSize={10} //3
+        dotScale={1} //1
       
         shape="square"
-        backgroundColor="#000000"
+        // backgroundColor="#000000"
         dropoutStrength={0.3}
         interactive
         distortionStrength={3}
@@ -69,7 +69,7 @@ const Hero06 = ({badge,title,description,buttonText,button2Text, headline}: hero
         sampleAverage
         // tintColor="#63b3ee5"
         tintStrength={0.2}
-        className="rounded-xl aspect-square"
+        className="rounded-full aspect-square border-primary border-5"
       />
       </div>
     </div>

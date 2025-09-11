@@ -4,6 +4,7 @@ import { AnimatedTooltip } from "./ui/animated-tooltip";
 import { FaGithub } from "react-icons/fa6";
 import { AiOutlineLink } from "react-icons/ai";
 import Link from "next/link";
+import SimpleDisplay from "./animations/simple-display";
 
 interface Feature {
   image?: string;
@@ -80,7 +81,8 @@ const ProjectsTimeline = ({ data }: Timeline3Props) => {
           <div className="flex flex-col gap-12 lg:gap-20 lg:col-span-2">
             {data &&
               data.map((project, index) => (
-                <div key={index} className="rounded-xl border p-2">
+                <SimpleDisplay >
+                  <div key={index} className="rounded-xl border p-2">
                   {/* <img
                   src={feature.image}
                   alt={feature.title}
@@ -117,6 +119,7 @@ const ProjectsTimeline = ({ data }: Timeline3Props) => {
                     </div>
                   </div>
                 </div>
+                </SimpleDisplay>
               ))}
           </div>
         </div>

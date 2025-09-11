@@ -17,7 +17,7 @@ const DefaultLayout: React.FC<DefaultLayoutProps> = ({ children }) => {
           disableTransitionOnChange
         >
           <Header />
-          <main className="flex flex-col min-h-screen">
+          <main className="flex flex-col min-h-screen font-poppins">
             {children}
           </main>
           <Footer />
