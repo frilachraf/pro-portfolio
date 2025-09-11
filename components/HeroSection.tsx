@@ -1,5 +1,6 @@
 import React from 'react';
 import Hero06 from './hero-06/hero-06';
+import { CgMouse } from "react-icons/cg";
 
 interface HeroSectionProps {
     title?: string;
@@ -19,10 +20,14 @@ const HeroSection: React.FC<HeroSectionProps> = ({
 }) => {
     return (
         <section
-            className=''
+            className='relative max-h-screen '
             id='about'
         >
            <Hero06 title={title} description={description} buttonText={buttonText} button2Text={button2Text}/>
+            <div className="absolute bottom-0 w-full left-0 right-0 flex items-center justify-center">
+                <CgMouse className='-translate-y-10 text-3xl lg:text-7xl animate-bounce text-primary '/>
+            </div>
+
         </section>
     );
 };

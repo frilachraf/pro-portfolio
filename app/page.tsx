@@ -15,6 +15,7 @@ import { useTranslations } from "next-intl";
 import TestComponent from "@/components/TestComponent";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ScrollProgressBar from "@/components/ScrollBarTrigger";
+import EmailBar from "@/components/EmailBar";
 
 export default function Home() {
  
@@ -22,6 +23,8 @@ export default function Home() {
   return (
     <DefaultLayout >
       <ScrollProgressBar />
+      {/* <EmailBar /> */}
+      
       <HeroSection />
       <ExperienceSection experiences={[]} title="Experiences" />
       <ProjectsSection projects={[]} />

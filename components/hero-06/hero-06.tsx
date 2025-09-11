@@ -27,11 +27,11 @@ const Hero06 = ({badge,title,description,buttonText,button2Text}: heroProps) => 
           {badge}
         </Badge>
         }
-        <h1 className="mt-6 text-4xl sm:text-5xl md:text-6xl font-bold !leading-[1.2] tracking-tight">
+        <h1 className="mt-6 text-4xl sm:text-5xl md:text-6xl font-bold !leading-[1.2] tracking-tight border">
           {title || "Build Beautiful Apps with Shadcn UI"}
         </h1>
-        {description && <TextGenerateEffect words={description} filter={false} className="font-medium"/>}
-        <div className="mt-12 flex items-center gap-4">
+        {description && <TextGenerateEffect words={description} filter={false} className="font-medium border"/>}
+        <div className="mt-12 flex items-center gap-4 border">
           <Button size="lg" className="rounded-full text-base">
             {buttonText}<ArrowUpRight className="!h-5 !w-5" />
           </Button>
@@ -44,15 +44,16 @@ const Hero06 = ({badge,title,description,buttonText,button2Text}: heroProps) => 
           </Button>
         </div>
       </div>
-      <div className="col-span-1 flex justify-center items-center p-6 sm:p-12 lg:p-24 py-24">
+      <div className="col-span-1 flex justify-center-  items-center bg-">
         
-      <canvas className="bg-muted rounded-xl absolute -z-2 translate-x-2- translate-y-2- translate-2" width={300} height={300}  />  
+      <canvas className="bg-primary rounded-xl absolute -z-8 translate-8" width={300} height={300}  />  
       <PixelatedCanvas
         src="./images/profile.jpg"
-        width={300}
-        height={300}
+        width={310}
+        height={310}
         cellSize={3}
         dotScale={1}
+      
         shape="square"
         backgroundColor="#000000"
         dropoutStrength={0.3}
@@ -67,7 +68,7 @@ const Hero06 = ({badge,title,description,buttonText,button2Text}: heroProps) => 
         sampleAverage
         // tintColor="#63b3ee5"
         tintStrength={0.2}
-        className="rounded-xl aspect-square "
+        className="rounded-xl aspect-square"
       />
       </div>
     </div>

@@ -19,7 +19,8 @@ export default function ScrollProgressBar() {
       end: "max", // listen to full scroll length
       onUpdate: (self) => {
         if (progressBar) {
-          progressBar.style.width = `${self.progress * 100}%`;
+          // progressBar.style.width = `${self.progress * 100}%`;
+          progressBar.style.height = `${self.progress * 100}%`;
         }
       },
     });
@@ -30,13 +31,15 @@ export default function ScrollProgressBar() {
   }, []);
 
   return (
-    <div 
-        className="fixed bottom-0 leading-0 h-[5] w-full z-[999] bg-muted rounded-full"
-    >
-      <div
+    <>
+    
+    <div className="fixed top-[50vh] -translate-y-[50%] w-[10px] right-4 bg-muted h-[30vh] border rounded-full">
+    <div
         ref={progressBarRef}
-        style={{ height: "100%", backgroundColor: "#4caf50", width: "0%" }}
+        style={{ height: "0%", backgroundColor: "#4caf50", width: "100%" }}
+        className="rounded-full"
       />
     </div>
+    </>
   );
 }
