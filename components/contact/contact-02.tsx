@@ -6,6 +6,8 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { MailIcon, MapPinIcon, MessageCircle, PhoneIcon } from "lucide-react";
 import Link from "next/link";
+import ContactForm from "./contact-form";
+import { FaWhatsapp } from "react-icons/fa6";
 
 const ContactPage = () => (
   <div className="min-h-screen flex items-center justify-center py-16">
@@ -37,7 +39,7 @@ const ContactPage = () => (
           </div>
           <div>
             <div className="h-12 w-12 flex items-center justify-center bg-primary/10 text-primary rounded-full">
-              <MessageCircle />
+              <FaWhatsapp />
             </div>
             <h3 className="mt-6 font-semibold text-xl">Live chat</h3>
             <p className="my-2.5 text-muted-foreground">
@@ -81,61 +83,7 @@ const ContactPage = () => (
         </div>
 
         {/* Form */}
-        <Card className="bg-muted shadow-">
-          <CardContent className="p-6 md:p-10">
-            <form>
-              <div className="grid md:grid-cols-2 gap-x-8 gap-y-5">
-                <div className="col-span-2 sm:col-span-1">
-                  <Label htmlFor="firstName">First Name</Label>
-                  <Input
-                    placeholder="First name"
-                    id="firstName"
-                    className="mt-1.5 bg-background h-11 shadow-none"
-                  />
-                </div>
-                <div className="col-span-2 sm:col-span-1">
-                  <Label htmlFor="lastName">Last Name</Label>
-                  <Input
-                    placeholder="Last name"
-                    id="lastName"
-                    className="mt-1.5 bg-background h-11 shadow-none"
-                  />
-                </div>
-                <div className="col-span-2">
-                  <Label htmlFor="email">Email</Label>
-                  <Input
-                    type="email"
-                    placeholder="Email"
-                    id="email"
-                    className="mt-1.5 bg-background h-11 shadow-none"
-                  />
-                </div>
-                <div className="col-span-2">
-                  <Label htmlFor="message">Message</Label>
-                  <Textarea
-                    id="message"
-                    placeholder="Message"
-                    className="mt-1.5 bg-background shadow-none"
-                    rows={6}
-                  />
-                </div>
-                <div className="col-span-2 flex items-center gap-2">
-                  <Checkbox id="acceptTerms" />
-                  <Label htmlFor="acceptTerms">
-                    You agree to our{" "}
-                    <Link href="#" className="underline">
-                      terms and conditions
-                    </Link>
-                    .
-                  </Label>
-                </div>
-              </div>
-              <Button className="mt-6 w-full" size="lg">
-                Submit
-              </Button>
-            </form>
-          </CardContent>
-        </Card>
+        <ContactForm />
       </div>
     </div>
   </div>

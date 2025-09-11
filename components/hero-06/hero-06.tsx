@@ -11,12 +11,13 @@ import { PixelatedCanvas } from "../ui/pixelated-canvas";
 interface heroProps {
   badge?: string;
   title?: string;
+  headline?: string;
   description?: string;
   buttonText?: string;
   button2Text?: string;
 
 }
-const Hero06 = ({badge,title,description,buttonText,button2Text}: heroProps) => {
+const Hero06 = ({badge,title,description,buttonText,button2Text, headline}: heroProps) => {
   return (
     <div className="min-h-screen grid lg:grid-cols-3 grid-cols-2">
       <BackgroundPattern />
@@ -27,11 +28,11 @@ const Hero06 = ({badge,title,description,buttonText,button2Text}: heroProps) => 
           {badge}
         </Badge>
         }
-        <h1 className="mt-6 text-4xl sm:text-5xl md:text-6xl font-bold !leading-[1.2] tracking-tight border">
+        <h1 className="mt-6 text-4xl sm:text-5xl md:text-6xl font-bold !leading-[1.2] tracking-tight ">
           {title || "Build Beautiful Apps with Shadcn UI"}
         </h1>
-        {description && <TextGenerateEffect words={description} filter={false} className="font-medium border"/>}
-        <div className="mt-12 flex items-center gap-4 border">
+        {description && <TextGenerateEffect words={description} filter={false} className="font-medium "/>}
+        <div className="mt-12 flex items-center gap-4 ">
           <Button size="lg" className="rounded-full text-base">
             {buttonText}<ArrowUpRight className="!h-5 !w-5" />
           </Button>

@@ -1,17 +1,16 @@
 "use client"
 import React from 'react';
 
-import { HeadphoneOffIcon, HeadphonesIcon, Moon, Sun, ToolCaseIcon } from "lucide-react"
-import { useTheme } from "next-themes"
+import { HeadphonesIcon, Moon, Sun, ToolCaseIcon } from "lucide-react";
+import { useTheme } from "next-themes";
 
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-import { FloatingDock } from "@/components/ui/floating-dock";
+} from "@/components/ui/dropdown-menu";
 import {
   IconBrandGithub,
   IconBrandX,
@@ -23,82 +22,37 @@ import {
   IconUser,
 } from "@tabler/icons-react";
 import { FloatingNav } from './ui/floating-navbar';
-
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from "@/components/ui/drawer";
+import ContactForm from './contact/contact-form';
 
 const Header: React.FC = () => {
-    const links = [
-    {
-      title: "Home",
-      icon: (
-        <IconHome className="h-full w-full text-neutral-500 dark:text-neutral-300" />
-      ),
-      href: "#",
-    },
- 
-    {
-      title: "Products",
-      icon: (
-        <IconTerminal2 className="h-full w-full text-neutral-500 dark:text-neutral-300" />
-      ),
-      href: "#",
-    },
-    {
-      title: "Components",
-      icon: (
-        <IconNewSection className="h-full w-full text-neutral-500 dark:text-neutral-300" />
-      ),
-      href: "#",
-    },
-    {
-      title: "Aceternity UI",
-      icon: (
-        <img
-          src="https://assets.aceternity.com/logo-dark.png"
-          width={20}
-          height={20}
-          alt="Aceternity Logo"
-        />
-      ),
-      href: "#",
-    },
-    {
-      title: "Changelog",
-      icon: (
-        <IconExchange className="h-full w-full text-neutral-500 dark:text-neutral-300" />
-      ),
-      href: "#",
-    },
- 
-    {
-      title: "Twitter",
-      icon: (
-        <IconBrandX className="h-full w-full text-neutral-500 dark:text-neutral-300" />
-      ),
-      href: "#",
-    },
-    {
-      title: "GitHub",
-      icon: (
-        <IconBrandGithub className="h-full w-full text-neutral-500 dark:text-neutral-300" />
-      ),
-      href: "#",
-    },
-  ];
 
   const navItems = [
     {
       title: "",
       link: "#about",
+      accessKey: "a",
       icon: <IconHome className="h-4 w-4 " />,
     },
     {
       title: "Experience",
       link: "#experiences",
+      accessKey: "e",
       icon: <IconUser className="h-4 w-4 " />,
     },
     {
       title: "Projects",
       link: "#projects",
+      accessKey: "p",
       icon: (
         <IconMessage className="h-4 w-4 " />
       ),
@@ -106,28 +60,83 @@ const Header: React.FC = () => {
     {
       title: "Skills",
       link: "#skills",
+      accessKey: "s",
       icon: (
         <ToolCaseIcon className="h-4 w-4 " />
       ),
     },
     {
-      title: "",
+      title: "Contact",
       link: "#contact",
+      accessKey: "c",
       icon: (
         <HeadphonesIcon className="h-4 w-4 " />
       ),
     },
   ];
-    return (
-        <header >
-           {/* <FloatingDock
+
+  const { setTheme } = useTheme();
+
+  return (
+    <header >
+      {/* <FloatingDock
             mobileClassName="translate-y-20" // only for demo, remove for production
             items={links}
         /> */}
+      <div className="absolute left-10 top-10 h-14 p-2 flex">
+        <img src="./images/logo.svg" alt="" className='h-full aspect-square' />
+      </div>
 
-        <FloatingNav navItems={navItems} className="" />
-        </header>
-    );
+      <FloatingNav navItems={navItems} className="z-[90] p-4" />
+      <div className="flex gap-2 px-2 fixed top-10 right-10 w-fit  p-2 rounded-full z-[10]">
+        <Drawer>
+          <DrawerTrigger>
+            <div accessKey="f" className='px-4 relative  items-center flex space-x-1  font-medium cursor-pointer '>
+              <HeadphonesIcon className="h-4 w-4 " />
+            </div>
+          </DrawerTrigger>
+          <DrawerContent>
+            <DrawerHeader>
+              <DrawerTitle>Are you absolutely sure?</DrawerTitle>
+              <DrawerDescription>This action cannot be undone.</DrawerDescription>
+            </DrawerHeader>
+            <ContactForm />
+            <DrawerFooter>
+              <DrawerClose>
+                <Button variant="outline">Cancel</Button>
+              </DrawerClose>
+            </DrawerFooter>
+          </DrawerContent>
+        </Drawer>
+
+        <div className="z-[12]">
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button size="icon" variant="outline" className="rounded-full cursor-pointer">
+                <Sun className="h-[1.2rem] w-[1.2rem] scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" />
+                <Moon className="absolute h-[1.2rem] w-[1.2rem] scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0" />
+                <span className="sr-only">Toggle theme</span>
+              </Button>
+
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end" className="bg-muted">
+              <DropdownMenuItem onClick={() => setTheme("light")}>
+                Light
+              </DropdownMenuItem>
+              <DropdownMenuItem onClick={() => setTheme("dark")}>
+                Dark
+              </DropdownMenuItem>
+              <DropdownMenuItem onClick={() => setTheme("system")}>
+                System
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+        </div>
+      </div>
+
+
+    </header>
+  );
 };
 
 export default Header;

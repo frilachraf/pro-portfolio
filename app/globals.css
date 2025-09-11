@@ -87,24 +87,33 @@
   /* --background: oklch(0.129 0.042 264.695); */
   --background: #212121;
   --foreground: oklch(0.984 0.003 247.858);
-  --card: oklch(0.208 0.042 265.755);
-  --card-foreground: oklch(0.984 0.003 247.858);
+  /* --card: oklch(0.208 0.042 265.755); */
+  /* --card-foreground: oklch(0.984 0.003 247.858); */
+   --card: oklch(28.908% 0.00003 271.152); 
+   --card-foreground: oklch(97.015% 0.00011 271.152); 
   --popover: oklch(0.208 0.042 265.755);
   --popover-foreground: oklch(0.984 0.003 247.858);
   /* --primary: oklch(0.929 0.013 255.508); */
-  --primary: #00ff1a;
+  --primary: #5fff20;
 
-  --primary-foreground: oklch(0.208 0.042 265.755);
+  /* --primary-foreground: oklch(0.208 0.042 265.755); */
+  --primary-foreground: oklch(25.615% 0.00003 271.152);
   --secondary: oklch(0.279 0.041 260.031);
   --secondary-foreground: oklch(0.984 0.003 247.858);
-  --muted: oklch(0.279 0.041 260.031);
-  --muted-foreground: oklch(0.704 0.04 256.788);
-  --accent: oklch(0.279 0.041 260.031);
+  /* --muted: oklch(0.279 0.041 260.031); */
+  --muted: #353535;
+  /* --muted-foreground: oklch(0.704 0.04 256.788); */
+  --muted-foreground: oklch(77.311% 0.00009 271.152);
+  /* --accent: oklch(0.279 0.041 260.031); */
+  --accent: oklch(37.15% 0.00004 271.152);
   --accent-foreground: oklch(0.984 0.003 247.858);
   --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
+  /* --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.551 0.027 264.364);
+  --ring: oklch(0.551 0.027 264.364); */
+  --border: oklch(96.416% 0.00011 271.152 / 0.1);
+  --input: oklch(95.815% 0.00011 271.152 / 0.15);
+  --ring: oklch(63.343% 0.00007 271.152);
   --chart-1: oklch(0.488 0.243 264.376);
   --chart-2: oklch(0.696 0.17 162.48);
   --chart-3: oklch(0.769 0.188 70.08);
@@ -133,3 +142,12 @@
 
 /* For Chrome, Safari, Edge */
  
+/* Hide scrollbar but allow scrolling */
+.hide-scrollbar , html.dark{
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+.hide-scrollbar::-webkit-scrollbar, html::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}

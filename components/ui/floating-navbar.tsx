@@ -98,9 +98,11 @@ export const FloatingNav = ({
         {navItems.map((navItem: any, idx: number) => (
           <a
             key={`link=${idx}`}
+            // accessKey={navItem?.accesskey}
+            accessKey={navItem.title[0]}
             onClick={(e) => {smoothNavigate(navItem.link)}}
             className={cn(
-              "relative text-neutral-50 items-center flex space-x-1 dark:text-neutral-600 cursor-pointer "
+              "relative text-neutral-50 items-center flex space-x-1 dark:text-neutral-600 font-medium cursor-pointer "
             )}
           >
             <span className="block sm:hidden-">{navItem.icon}</span>
@@ -111,29 +113,7 @@ export const FloatingNav = ({
           <span>Login</span>
           <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-blue-500 to-transparent  h-px" />
         </button> */}
-        <div className="z-[12]">
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button  size="icon" className="rounded-full cursor-pointer">
-                <Sun className="h-[1.2rem] w-[1.2rem] scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" />
-                <Moon className="absolute h-[1.2rem] w-[1.2rem] scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0" />
-                <span className="sr-only">Toggle theme</span>
-              </Button>
-
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="end" className="bg-muted">
-              <DropdownMenuItem onClick={() => setTheme("light")}>
-                Light
-              </DropdownMenuItem>
-              <DropdownMenuItem onClick={() => setTheme("dark")}>
-                Dark
-              </DropdownMenuItem>
-              <DropdownMenuItem onClick={() => setTheme("system")}>
-                System
-              </DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
-        </div>
+        
       </motion.div>
     </AnimatePresence>
   );
