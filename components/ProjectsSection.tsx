@@ -22,8 +22,6 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = async ({ }) =>
     .eq('profile_id', process.env.NEXT_PUBLIC_SUPABASE_CLIENT_USER_ID)
     .order("end_at", { ascending: false });
 
-
-    console.log(projects)
     return  (
     <section className='w-full max-w-screen-xl mx-auto px-6 xl:px-0' id='projects'>
         {projects &&

@@ -37,9 +37,8 @@ const HomePage = async () => {
       <ExperienceSection experiences={[]} title="Experiences" />
       <ProjectsSection projects={[]} />
       <SkillsSection skills={[]} title="What Tools I use" description="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto consectetur repellat ipsum, doloribus expedita architecto!" />
-      <div id="contact">
-        <ContactSection />
-      </div>
+      
+      <ContactSection profile={profile}/>
 
 
       <div className=""></div>

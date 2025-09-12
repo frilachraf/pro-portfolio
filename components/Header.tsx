@@ -112,14 +112,14 @@ const Header: React.FC = () => {
         <div className="z-[12]">
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button size="icon" variant="outline" className="rounded-full cursor-pointer">
+              <Button size="icon" variant="outline" className="rounded-full cursor-pointer !bg-background !dark:bg-muted">
                 <Sun className="h-[1.2rem] w-[1.2rem] scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" />
                 <Moon className="absolute h-[1.2rem] w-[1.2rem] scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0" />
                 <span className="sr-only">Toggle theme</span>
               </Button>
 
             </DropdownMenuTrigger>
-            <DropdownMenuContent align="end" className="bg-muted">
+            <DropdownMenuContent align="end" className="bg-background">
               <DropdownMenuItem onClick={() => setTheme("light")}>
                 Light
               </DropdownMenuItem>
