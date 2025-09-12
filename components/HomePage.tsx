@@ -9,6 +9,9 @@ import ContactSection from "@/components/ContactSection";
 import ScrollProgressBar from "@/components/ScrollBarTrigger";
 import { createClient } from '@/lib/supabase/server';
 import SimpleDisplay from './animations/simple-display';
+import { LampContainer } from './ui/lamp';
+import {motion} from 'motion/react'
+import { FormationSection } from './FormationsSection';
 const HomePage = async () => {
     
     const supabase = await createClient();
@@ -29,7 +32,6 @@ const HomePage = async () => {
   return (
     <>
     <DefaultLayout >
-      
       <ScrollProgressBar />
       {/* <EmailBar /> */}
       
@@ -37,12 +39,8 @@ const HomePage = async () => {
       <ExperienceSection experiences={[]} title="Experiences" />
       <ProjectsSection projects={[]} />
       <SkillsSection skills={[]} title="What Tools I use" description="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto consectetur repellat ipsum, doloribus expedita architecto!" />
-      
       <ContactSection profile={profile}/>
-
-
-      <div className=""></div>
-      
+      <FormationSection />
     </DefaultLayout>
     </>
   );

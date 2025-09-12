@@ -11,6 +11,7 @@ import Link from "next/link";
 import {
   FaDiscord,
   FaFacebookF,
+  FaFigma,
   FaGithub,
   FaInstagram,
   FaInstagramSquare,
@@ -124,6 +125,11 @@ const FooterComponent = ({ profile }: any) => {
               {profile?.github && (
                 <Link href={profile?.github} target="_blank">
                   <FaGithub className="h-5 w-5" />
+                </Link>
+              )}
+              {profile?.figma && (
+                <Link href={profile?.figma} target="_blank">
+                  <FaFigma  className="h-5 w-5 font-bold " />
                 </Link>
               )}
             </div>
