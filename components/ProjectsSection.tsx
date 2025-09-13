@@ -1,8 +1,6 @@
 import React from 'react';
 import { createClient } from '@/lib/supabase/server';
 import ProjectsTimeline from './AppTimeline3';
-import { getProjects } from '@/services/data';
-import { AnimatedTooltip } from './ui/animated-tooltip';
 
 interface Project {
     title: string;

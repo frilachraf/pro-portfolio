@@ -6,7 +6,8 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel"
-export function AppCarousel({items}: {items?: any[]}) {
+import Image from "next/image";
+export function AppCarousel({items}: {items?: any}) {
   return (
     // <div className="h-56 sm:h-64 xl:h-80 2xl:h-96">
     <div className="w-full px-8 py-4">
@@ -14,7 +15,7 @@ export function AppCarousel({items}: {items?: any[]}) {
       <Carousel className="aspect-video w-full ">
         <CarouselContent>
           {
-            items.map((src, index) => (
+            items.map(({src, index}:{src:string; index:number}) => (
               <CarouselItem key={index}><img src={src} alt="" className="w-full h-full object-cover rounded-lg"/></CarouselItem>
             ))
           }
@@ -28,7 +29,7 @@ export function AppCarousel({items}: {items?: any[]}) {
       
       <div className="aspect-video w-full">
         {items && 
-          <img src={items[0]} alt="" className="h-full w-full object-cover rounded-lg"/>
+          <Image src={items[0]} alt="" className="h-full w-full object-cover rounded-lg"/>
         }
       </div>
       }

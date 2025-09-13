@@ -1,13 +1,9 @@
 'use client'
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ArrowUpRight, CirclePlay } from "lucide-react";
 import { BackgroundPattern } from "./background-pattern";
-import { title } from "process";
 import { TextGenerateEffect } from "../ui/text-generate-effect";
-import { PixelatedCanvas } from "../ui/pixelated-canvas";
 import Image from "next/image";
-import { FaLinkedinIn } from "react-icons/fa";
 import { HiDownload } from "react-icons/hi";
 import { SlSocialLinkedin } from "react-icons/sl";
 import Link from "next/link";

@@ -6,19 +6,8 @@ import { useTheme } from "next-themes";
 
 import { Button } from "@/components/ui/button";
 import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import {
-  IconBrandGithub,
-  IconBrandX,
-  IconExchange,
   IconHome,
   IconMessage,
-  IconNewSection,
-  IconTerminal2,
   IconUser,
 } from "@tabler/icons-react";
 import { FloatingNav } from './ui/floating-navbar';
