@@ -80,7 +80,7 @@ const FooterComponent = ({ profile }: any) => {
                 <li key={title}>
                   <Link
                     href={link}
-                    className="text-muted-foreground hover:text-foreground font-medium"
+                    className="text-muted-foreground font-medium hover:text-primary"
                   >
                     {title}
                   </Link>

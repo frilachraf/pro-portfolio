@@ -5,6 +5,8 @@ import { FaGithub } from "react-icons/fa6";
 import { AiOutlineLink } from "react-icons/ai";
 import Link from "next/link";
 import SimpleDisplay from "./animations/simple-display";
+import { AppHeading2, AppHeadingDescription } from "./AppHeadings";
+import { FaFigma } from "react-icons/fa";
 
 interface Feature {
   image?: string;
@@ -36,13 +38,13 @@ interface Timeline3Props {
   };
   features?: Feature[];
   data?: Project[];
+  profile?: any;
 }
 
-const ProjectsTimeline = ({ data }: Timeline3Props) => {
+const ProjectsTimeline = ({ data , profile}: Timeline3Props) => {
   const content = {
-    heading: "Experience the difference with us",
-    description:
-      "We believe in creating lasting partnerships with our clients, focusing on long-term success through collaborative innovation and dedicated support.",
+    heading: "What Have I Built?",
+    description: "A showcase of work where ideas turned into products people use and love.",
     buttons: {
       primary: {
         text: "Start Now",
@@ -59,23 +61,22 @@ const ProjectsTimeline = ({ data }: Timeline3Props) => {
       <div className="">
         <div className="relative grid gap-16 lg:grid-cols-3">
           <div className="top-40 h-fit lg:sticky lg:col-span-1">
-            <h2 className="mt-4 mb-6 text-4xl font-semibold lg:text-5xl">
-              {content.heading}
-            </h2>
-            <p className="font-medium text-muted-foreground lg:text-xl">
-              {content.description}
-            </p>
+            <AppHeading2 text={content.heading}/>
+            <AppHeadingDescription text={content.description} />
+
             <div className="mt-8 flex flex-col gap-4 lg:flex-row">
-              <Button className="gap-2" size="lg" asChild>
-                <a href={content.buttons.primary.url}>
-                  {content.buttons.primary.text}
-                </a>
-              </Button>
-              <Button variant="outline" size="lg" className="gap-2" asChild>
-                <a href={content.buttons.secondary.url}>
-                  {content.buttons.secondary.text}
-                </a>
-              </Button>
+              {profile?.github && (
+                <Link href={profile?.github} target="_blank">
+                  <FaGithub className="h-5 w-5" />
+                </Link>
+              )}
+              {profile?.figma && (
+                <Link href={profile?.figma} target="_blank">
+                  <FaFigma  className="h-5 w-5 font-bold " />
+                </Link>
+              )}
+              {JSON.stringify(profile)}
+              
             </div>
           </div>
           <div className="flex flex-col gap-12 lg:gap-20 lg:col-span-2">

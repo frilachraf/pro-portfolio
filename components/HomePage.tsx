@@ -36,11 +36,10 @@ const HomePage = async () => {
       {/* <EmailBar /> */}
       
       <HeroSection />
-      <ExperienceSection experiences={[]} title="Experiences" />
+      <ExperienceSection experiences={[]} />
       <ProjectsSection projects={[]} />
-      <SkillsSection skills={[]} title="What Tools I use" description="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto consectetur repellat ipsum, doloribus expedita architecto!" />
+      <SkillsSection skills={[]}  />
       <ContactSection profile={profile}/>
-      <FormationSection />
     </DefaultLayout>
     </>
   );

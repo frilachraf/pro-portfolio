@@ -5,6 +5,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Database, PcCase, PenIcon } from "lucide-react";
 import { createClient } from "@/lib/supabase/server";
 import { FaStarOfLife } from "react-icons/fa6";
+import { AppHeading2, AppHeadingDescription } from "./AppHeadings";
 
 interface Skill {
   name: string;
@@ -18,9 +19,9 @@ interface SkillsSectionProps {
 }
 
 const SkillsSection: React.FC<SkillsSectionProps> = async ({
-  title = "Skills",
+  title = "What Tools Do I Use to Bring Ideas to Life?",
   skills,
-  description = "",
+  description = "From frontend polish to backend power, I use the right stack for the job.",
 }) => {
   const TriggerclassName ="p-4 w-full justify-start"
       "w-full justify-center data-[state=active]:bg-transparent data-[state=active]:font-medium data-[state=active]:text-foreground rounded-none px-4 py-2  data-[state=active]:shadow-none text-foreground/50 dark:text-muted-foreground border-b-2 border-transparent data-[state=active]:border-b-primary data-[state=active]:bg-red-500 hover:bg-accent hover:text-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-background";
@@ -35,10 +36,8 @@ const SkillsSection: React.FC<SkillsSectionProps> = async ({
   const otherTools = technologies?.filter((tech) => !["frontend","backend","design"].includes(tech.category));
   return (
     <section id="skills" className="py-20 text-s rounded-3xl bg- flex flex-col w-full max-w-screen-xl mx-auto px-6 xl:px-0">
-      <h1 className="mt-4 mb-6 text-4xl font-semibold lg:text-5xl tracking-tight">
-        {title}
-      </h1>
-      <p className="font-medium text-muted-foreground lg:text-xl">{description}</p>
+      <AppHeading2 text={title} />
+      <AppHeadingDescription text={description} />
       <Tabs defaultValue="all" className="mt-10 gap-6 rounded-xl flex flex-row">
         <TabsList className="mx-auto h-fit p-2 w-fit flex-col">
           <TabsTrigger className={TriggerclassName} value="all">

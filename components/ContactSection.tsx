@@ -10,21 +10,22 @@ import Link from "next/link";
 import { FaWhatsapp } from "react-icons/fa6";
 import ContactForm from './contact/contact-form';
 import { GoArrowRight } from "react-icons/go";
+import { AppHeading2, AppHeadingDescription } from './AppHeadings';
 
 
-const ContactSection = ({profile}:any) => {
+const ContactSection = ({
+    profile, 
+    title = "Ready to Build Something Together?",
+    description= "Let’s connect and bring your vision to life—one line of code at a time."
+  }:any) => {
     return (
         <section id='contact' >
             <div className="min-h-screen flex items-center justify-center py-16">
     <div className="w-full max-w-screen-xl mx-auto px-6 xl:px-0">
       <b className="text-muted-foreground"></b>
-      <h2 className="mt-3 text-3xl md:text-4xl font-bold tracking-tight">
-        Let's Contact
-      </h2>
-      <p className="mt-3 text-base sm:text-lg text-foreground/60">
-        I&apos;d love to hear from you. Please fill out this form or shoot me
-        an email.
-      </p>
+      <AppHeading2 text={title}/>
+      <AppHeadingDescription text={description} />
+
       <div className="mt-24 grid lg:grid-cols-2 gap-16 md:gap-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-12">
           <div className=''>
@@ -45,7 +46,7 @@ const ContactSection = ({profile}:any) => {
               <FaWhatsapp className='text-3xl' />
             </div>
             <h3 className="mt-6 font-semibold text-xl">Whatsapp</h3>
-            <Link className="font-medium text- flex gap-2 items-center " href={`${profile?.whatsapp}`} target='_blank'>
+            <Link className="font-medium text-muted-foreground flex gap-2 items-center " href={`${profile?.whatsapp}`} target='_blank'>
               Chat <GoArrowRight className='text-xl text-primary'/>
             </Link>
           </div>
@@ -68,11 +69,11 @@ const ContactSection = ({profile}:any) => {
               Mon-Fri from 8am to 5pm.
             </p> */}
             <Link
-              className="ont-medium  flex gap-2 items-center "
+              className="font-medium text-muted-foreground flex gap-2 items-center "
               href={`tel:${profile?.tel}`}
               target='_blank'
             >
-              {profile?.tel} <GoArrowRight className='text-xl text-primary'/>
+              {profile?.tel} <GoArrowRight className='text-xl text-primary '/>
             </Link>
           </div>
         </div>

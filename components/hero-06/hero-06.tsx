@@ -1,3 +1,4 @@
+'use client'
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ArrowUpRight, CirclePlay } from "lucide-react";
@@ -10,6 +11,7 @@ import { FaLinkedinIn } from "react-icons/fa";
 import { HiDownload } from "react-icons/hi";
 import { SlSocialLinkedin } from "react-icons/sl";
 import Link from "next/link";
+import { downloadFile } from "@/services/storage";
 
 
 interface heroProps {
@@ -19,6 +21,7 @@ interface heroProps {
   description?: string;
   buttonText?: string;
   button2Link?: string;
+  // onClickButton?: any;
 
 }
 const Hero06 = ({badge,title,description,buttonText,button2Link, headline}: heroProps) => {
@@ -33,11 +36,13 @@ const Hero06 = ({badge,title,description,buttonText,button2Link, headline}: hero
         </Badge>
         }
         <h1 className="mt-6 text-4xl sm:text-5xl md:text-6xl font-bold !leading-[1.2] tracking-tight ">
-          {title || "Build Beautiful Apps with Shadcn UI"}
+          {title}
         </h1>
-        {description && <TextGenerateEffect words={description} filter={false} className="font-medium "/>}
+        {description && <TextGenerateEffect words={description} filter={false} className="font-medium text-muted-foreground"/>}
         <div className="mt-12 flex items-center gap-4 ">
-          <Button size="lg" className="rounded-full text-base dark:bg-white">
+          <Button onClick={async ()=>{
+            downloadFile('resume.pdf')
+          }} size="lg" className="rounded-full text-base dark:bg-white dark:hover:bg-primary transition-colors duration-75">
             Get my resume <HiDownload className="!h-5 !w-5" />
           </Button>
           {button2Link &&

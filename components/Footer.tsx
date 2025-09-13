@@ -9,9 +9,9 @@ const Footer: React.FC = async () => {
     const profile = data[0]
       
     return (
-        <>
-        <FooterComponent profile={profile}/>
-        </>
+        <section className='dark'>
+            <FooterComponent profile={profile}/>
+        </section>
     );
 };
 

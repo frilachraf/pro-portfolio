@@ -38,7 +38,7 @@ interface ExperiencesTimelineProps {
 }
 export default function AppTimeline4({ data }: ExperiencesTimelineProps) {
   return (
-    <div className="">
+    <div className="mt-12">
       <div className="relative ml-4">
         {/* Timeline line */}
         <div className="absolute left-0 inset-y-0 border-l-2" />
@@ -58,11 +58,11 @@ export default function AppTimeline4({ data }: ExperiencesTimelineProps) {
                 {/* Content */}
 
                 <ExperienceTimlineAnimation delay={index*0.5}>
-                <div className="pt-2 sm:pt-1 space-y-3">
-                  <p className="text-base sm:text-lg font-semibold">{experience?.company}</p>
+                <div className="pt-2- sm:pt-1- space-y-3">
+                  <p className="text-base sm:text-lg font-semibold align-text-top">{experience?.company}</p>
                   <div>
                     <h3 className="text-lg sm:text-xl font-medium">{experience?.title}</h3>
-                    <div className="flex items-center gap-2 mt-1 text-sm">
+                    <div className="flex items-center gap-2 mt-1 text-sm text-muted-foreground">
                       <Calendar className="h-4 w-4" />
                       <span>{experience?.started_at} - {experience?.end_at}</span>
                     </div>
