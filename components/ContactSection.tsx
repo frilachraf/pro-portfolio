@@ -6,12 +6,21 @@ import ContactForm from './contact/contact-form';
 import { GoArrowRight } from "react-icons/go";
 import { AppHeading2, AppHeadingDescription } from './AppHeadings';
 
-
+interface ContactSectionProps {
+  title?:string;
+  description?:string;
+  profile?: {
+    email?: string;
+    address?: string;
+    tel?: string;
+    whatsapp?: string;
+  }
+}
 const ContactSection = ({
     profile, 
     title = "Ready to Build Something Together?",
     description= "Let’s connect and bring your vision to life—one line of code at a time."
-  }:any) => {
+  }: ContactSectionProps) => {
     return (
         <section id='contact' >
             <div className="min-h-screen flex items-center justify-center py-16">

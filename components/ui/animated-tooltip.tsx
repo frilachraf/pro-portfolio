@@ -8,6 +8,7 @@ import {
   useMotionValue,
   useSpring,
 } from "motion/react";
+import Image from "next/image";
 
 export const AnimatedTooltip = ({
   items,
@@ -35,23 +36,24 @@ export const AnimatedTooltip = ({
     springConfig,
   );
 
-  const handleMouseMove = (event: any) => {
-    if (animationFrameRef.current) {
-      cancelAnimationFrame(animationFrameRef.current);
-    }
+  const handleMouseMove = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+  if (animationFrameRef.current) {
+    cancelAnimationFrame(animationFrameRef.current);
+  }
 
-    animationFrameRef.current = requestAnimationFrame(() => {
-      const halfWidth = event.target.offsetWidth / 2;
-      x.set(event.nativeEvent.offsetX - halfWidth);
-    });
-  };
+  animationFrameRef.current = requestAnimationFrame(() => {
+    const halfWidth = (event.currentTarget as HTMLDivElement).offsetWidth / 2;
+    x.set(event.nativeEvent.offsetX - halfWidth);
+  });
+};
+
 
   return (
     <>
       {items.map((item, idx) => (
         <div
           className="group relative -mr-4"
-          key={item?.tool?.name}
+          key={idx}
           onMouseEnter={() => setHoveredIndex(item?.tool?.id)}
           onMouseLeave={() => setHoveredIndex(null)}
         >
@@ -86,12 +88,12 @@ export const AnimatedTooltip = ({
               </motion.div>
             )}
           </AnimatePresence>
-          <img
+          <Image
             onMouseMove={handleMouseMove}
             height={100}
             width={100}
-            src={item?.tool.icon}
-            // src={'https://www.svgrepo.com/show/452092/react.svg'}
+            // src={item?.tool.icon}
+            src={'https://www.svgrepo.com/show/452092/react.svg'}
             alt={item?.tool.name}
             className="relative !m-0 h-10 w-10 p-2 rounded-full border-2 border-background object-cover object-top transition duration-500 group-hover:z-30 group-hover:scale-105 bg-white"
           />

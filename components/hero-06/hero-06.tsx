@@ -2,7 +2,6 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { BackgroundPattern } from "./background-pattern";
-import { TextGenerateEffect } from "../ui/text-generate-effect";
 import Image from "next/image";
 import { HiDownload } from "react-icons/hi";
 import { SlSocialLinkedin } from "react-icons/sl";
@@ -20,7 +19,7 @@ interface heroProps {
   // onClickButton?: any;
 
 }
-const Hero06 = ({badge,title,description,buttonText,button2Link, headline}: heroProps) => {
+const Hero06 = ({badge,title,description,button2Link}: heroProps) => {
   return (
     <div className="min-h-screen grid lg:grid-cols-3 grid-cols-2">
       <BackgroundPattern />
@@ -34,7 +33,7 @@ const Hero06 = ({badge,title,description,buttonText,button2Link, headline}: hero
         <h1 className="mt-6 text-4xl sm:text-5xl md:text-6xl font-bold !leading-[1.2] tracking-tight ">
           {title}
         </h1>
-        {description && <TextGenerateEffect words={description} filter={false} className="font-medium text-muted-foreground"/>}
+        {description && <p className="font-medium text-muted-foreground">{description}</p>}
         <div className="mt-12 flex items-center gap-4 ">
           <Button onClick={async ()=>{
             downloadFile('resume.pdf')

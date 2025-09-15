@@ -22,6 +22,7 @@ import {
   DrawerTrigger,
 } from "@/components/ui/drawer";
 import ContactForm from './contact/contact-form';
+import Image from 'next/image';
 
 const Header: React.FC = () => {
 
@@ -74,8 +75,10 @@ const Header: React.FC = () => {
             mobileClassName="translate-y-20" // only for demo, remove for production
             items={links}
         /> */}
-      <div className="absolute left-10 top-10 h-14 p-2 flex">
-        <img src="./images/logo.svg" alt="" className='h-full aspect-square' />
+      <div className="absolute left-10 top-10 h-14 p-2 flex ">
+        <div className="rlative">
+        <Image src="./images/logo.svg" alt="" className='h-full aspect-square' fill />
+        </div>
       </div>
 
       <FloatingNav navItems={navItems} className="z-[90] p-4" />

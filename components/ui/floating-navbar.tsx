@@ -1,28 +1,15 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import {
-  motion,
-  AnimatePresence,
-  useScroll,
-  useMotionValueEvent,
-} from "motion/react";
 import { cn } from "@/lib/utils";
 import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-
-
-
-import { Moon, Sun } from "lucide-react"
-import { useTheme } from "next-themes"
-
-import { Button } from "@/components/ui/button"
+  AnimatePresence,
+  motion,
+  useMotionValueEvent,
+  useScroll,
+} from "motion/react";
+import React, { useEffect, useState } from "react";
 
 import { gsap } from "gsap";
-    
+
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
 export const FloatingNav = ({
@@ -40,12 +27,11 @@ export const FloatingNav = ({
 
   const [visible, setVisible] = useState(false);
   //
-  const { theme, setTheme } = useTheme();
 
   useMotionValueEvent(scrollYProgress, "change", (current) => {
     // Check if current is not undefined and is a number
     if (typeof current === "number") {
-      let direction = current! - scrollYProgress.getPrevious()!;
+      const direction = current! - scrollYProgress.getPrevious()!;
 
       if (scrollYProgress.get() < 0.05) {
         setVisible(true);
@@ -61,19 +47,19 @@ export const FloatingNav = ({
   });
   const smoothNavigate = (id: string) => {
     // gsap.to(window, { duration: 2, scrollTo: { y: id, offsetY: 50 } });
-    gsap.to(window, 
-      { 
+    gsap.to(window,
+      {
         duration: 1,
         scrollTo: { y: id, autoKill: true },
         ease: "power2.out"
-        
+
       });
-    console.log("Navigating to:", id);  
+    console.log("Navigating to:", id);
   }
   useEffect(() => {
     gsap.registerPlugin(ScrollToPlugin);
-    
-    
+
+
 
   }, []);
   return (
@@ -95,17 +81,21 @@ export const FloatingNav = ({
           className
         )}
       >
-        {navItems.map((navItem: any, idx: number) => (
+        {navItems.map((navItem: {
+          link: string; 
+          title: string;
+          iconN?: string;
+        }, idx: number) => (
           <a
             key={`link=${idx}`}
             // accessKey={navItem?.accesskey}
-            accessKey={navItem.title[0]}
-            onClick={(e) => {smoothNavigate(navItem.link)}}
+            accessKey={navItem.title && navItem.title[0]}
+            onClick={() => { smoothNavigate(navItem.link) }}
             className={cn(
               "relative  items-center flex space-x-1 font-medium cursor-pointer text-neutral-500 dark:text-neutral-300 hover:text-foreground dark:hover:text-primary"
             )}
           >
-            <span className="block sm:hidden-">{navItem.icon}</span>
+            <span className="block sm:hidden-">{navItem.iconN}</span>
             <span className="hidden- sm:block text-sm">{navItem.title}</span>
           </a>
         ))}
@@ -113,8 +103,8 @@ export const FloatingNav = ({
           <span>Login</span>
           <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-blue-500 to-transparent  h-px" />
         </button> */}
-        
+
       </motion.div>
     </AnimatePresence>
-  );``
+  );
 };

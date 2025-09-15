@@ -1,13 +1,11 @@
 "use client";
 
 import DotPattern from "@/components/ui/dot-pattern";
-import Particles from "@/components/ui/particles";
+// import Particles from "@/components/ui/particles";
 import { cn } from "@/lib/utils";
-import { useTheme } from "next-themes";
 
 export const BackgroundPattern = () => {
-  const { resolvedTheme } = useTheme();
-  const isLightTheme = resolvedTheme === "light";
+  
 
   return (
     <>
@@ -22,13 +20,13 @@ export const BackgroundPattern = () => {
           "dark:fill-neutral-700 !-z-10 rounded-3xl border-b-2"
         )}
       />
-      <Particles
+      {/* <Particles
         className="absolute inset-0"
         quantity={100}
         ease={80}
         color={isLightTheme ? "#1db954" : "#1db954"}
         refresh
-      />
+      /> */}
     </>
   );
 };

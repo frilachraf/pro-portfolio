@@ -14,13 +14,13 @@ interface Feature {
   description?: string;
 }
 interface Project {
-  name: string;
-  description: string;
-  link: string;
-  github: string;
+  name?: string;
+  description?: string;
+  link?: string;
+  github?: string;
   image?: string;
-  date: string;
-  project_tools: [];
+  date?: string;
+  project_tools?: [];
 }
 
 interface Timeline3Props {
@@ -38,7 +38,10 @@ interface Timeline3Props {
   };
   features?: Feature[];
   data?: Project[];
-  profile?: any;
+  profile?: {
+    figma?:string;
+    github?:string;
+  };
 }
 
 const ProjectsTimeline = ({ data , profile}: Timeline3Props) => {
@@ -89,7 +92,9 @@ const ProjectsTimeline = ({ data , profile}: Timeline3Props) => {
                   alt={feature.title}
                   className="aspect-video w-full rounded-xl border border-dashed object-cover"
                 /> */}
+                  {project?.image && 
                   <AppCarousel items={[project?.image]} />
+                  }
                   <div className="p-6">
                     <h3 className="mb-1 text-2xl font-semibold">
                       {project?.name}
