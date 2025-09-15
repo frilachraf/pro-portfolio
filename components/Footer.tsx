@@ -4,14 +4,28 @@ import { createClient } from '@/lib/supabase/server';
 
 
 
-interface ProfileProps {
-    email?: string[]
+interface Profile {
+  id: string;
+  title?: string;
+  headline?: string;
+  subline?: string;
+  email?: string;
+  github?: string;
+  figma?: string;
+  discord?: string;
+  linkedin?: string;
+  facebook?: string;
+  instagram?: string;
 }
+
 const Footer: React.FC = async () => {
     
     const supabase = await createClient();
-    const {data, error} = await supabase.from('profiles').select().eq('id', process.env.NEXT_PUBLIC_SUPABASE_CLIENT_USER_ID).limit(1)
-    const profile: ProfileProps = data && data[0] || null
+    const { data: profile, error } = await supabase
+    .from('profiles')
+    .select()
+    .eq("id", process.env.NEXT_PUBLIC_SUPABASE_CLIENT_USER_ID)
+    .single<Profile>();
     if(error) return false  
     return (
         <section className='dark'>

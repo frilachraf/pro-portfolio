@@ -1,7 +1,6 @@
 
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import type { Metadata } from "next";
-import { NextIntlClientProvider } from 'next-intl';
 import { Poppins } from "next/font/google";
 import "./globals.css";
 
@@ -31,7 +30,7 @@ export default function RootLayout({
         className={`${poppins.variable} antialiased`}
         suppressHydrationWarning
       >
-        <NextIntlClientProvider>{children}</NextIntlClientProvider>
+        <>{children}</>
 
         <SpeedInsights />
 
