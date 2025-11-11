@@ -23,6 +23,7 @@ import {
 } from "@/components/ui/drawer";
 import ContactForm from './contact/contact-form';
 import Image from 'next/image';
+import { FloatingDockMobile } from './ui/floating-dock';
 
 const Header: React.FC = () => {
 
@@ -75,14 +76,15 @@ const Header: React.FC = () => {
             mobileClassName="translate-y-20" // only for demo, remove for production
             items={links}
         /> */}
-      <div className="absolute left-10 top-10 h-14 p-2 flex ">
+      <div className="absolute left-10 top-10 h-14 p-2 flex">
         <div className="rlative">
         <Image src="./images/logo.svg" alt="" className='h-full aspect-square' fill />
         </div>
       </div>
 
-      <FloatingNav navItems={navItems} className="z-[90] p-4" />
-      <div className="flex gap-2 px-2 fixed top-10 right-10 w-fit  p-2 rounded-full z-[10]">
+      <FloatingNav navItems={navItems} className="z-[90] p-4 " />
+      <FloatingDockMobile items={navItems} className='fixed bottom-10 sm:right-10 right-5 z-[100] cursor-pointer'/>
+      <div className="flex- border hidden sm:top-10 sm:right-10 top-5 right-5 w-fit rounded-full z-[10]">
         <Drawer>
           <DrawerTrigger>
             {/* <div accessKey="f" className='px-4 relative  items-center flex space-x-1  font-medium cursor-pointer '>
@@ -103,11 +105,12 @@ const Header: React.FC = () => {
           </DrawerContent>
         </Drawer>
 
-        <div className="z-[12]">
-              <Button  onClick={toggleTheme} size="icon" variant="outline" className="rounded-full cursor-pointer !bg-background !dark:bg-muted">
+        <div className="z-[12]- border">
+              <Button  onClick={toggleTheme} size="icon" variant="outline" className="rounded-full cursor-pointer !bg-background- dark:bg-muted h-12 w-12 border">
                 <Sun className="h-[1.2rem] w-[1.2rem] scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" />
                 <Moon className="absolute h-[1.2rem] w-[1.2rem] scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0" />
                 <span className="sr-only">Toggle theme</span>
+                button
               </Button>
           {/* <DropdownMenu>
             <DropdownMenuTrigger asChild>

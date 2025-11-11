@@ -8,6 +8,8 @@ interface Profile {
   title?: string;
   headline?: string;
   subline?: string;
+  about_me?:string;
+  
 }
 
 const HeroSection = async () => {
@@ -33,10 +35,11 @@ const HeroSection = async () => {
         <Hero06
           title={profile.title}
           headline={profile.headline}
-          description={profile.subline}
+          description={profile.about_me}
+          mobileDescription={profile.headline}
         />
       )}
-      <div className="absolute bottom-0 w-full left-0 right-0 flex items-center justify-center">
+      <div className="absolute bottom-0 w-full left-0 right-0 items-center justify-center -500 hidden sm:flex">
         <CgMouse className="-translate-y-10 text-3xl sm:text-4xl animate-bounce text-primary" />
       </div>
     </section>

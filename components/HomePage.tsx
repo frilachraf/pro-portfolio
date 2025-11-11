@@ -9,6 +9,8 @@ import { createClient } from "@/lib/supabase/server";
 
 interface Profile {
   id: string;
+  first_name?: string;
+  last_name?: string;
   title?: string;
   headline?: string;
   subline?: string;
@@ -60,6 +62,9 @@ const HomePage = async () => {
       <ProjectsSection />
       <SkillsSection skills={[]} />
       <ContactSection profile={profile} />
+      {/* <section className="max-h-screen w-screen bg-dark overflow-hidden text-center border">
+        <h1 className="text-[32vh] font-medium capitalize text-primary- leading-none">{profile.first_name} {profile.last_name}</h1>
+      </section> */}
     </DefaultLayout>
   );
 };

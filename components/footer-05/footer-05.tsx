@@ -35,16 +35,16 @@ const FooterComponent = ({ profile }: { profile: Profile }) => {
   ];
 
   return (
-    <div className="flex flex-col">
-      <footer>
-        <div className="max-w-screen-xl mx-auto">
-          <div className="py-12 flex flex-col justify-start items-center">
+    <div className="flex flex-col px-6">
+      <footer className="">
+        <div className="max-w-screen-xl mx-auto ">
+          <div className="flex flex-col justify-start items-center">
             {/* Logo */}
             <div className="flex gap-2 items-center relative h-8">
               <Image src="/images/logo.svg" alt="Logo" className="h-8" fill/>
             </div>
 
-            <ul className="mt-6 flex items-center gap-4 flex-wrap">
+            <ul className="mt-6 sm:flex items-center gap-4 flex-wrap border justify-center hidden">
               {navItems.map(({ title, link, accessKey, icon }) => (
                 <li key={title}>
                   <Link

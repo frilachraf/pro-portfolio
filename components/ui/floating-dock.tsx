@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import { IconLayoutNavbarCollapse } from "@tabler/icons-react";
+import { Moon, Sun } from "lucide-react";
 import {
   AnimatePresence,
   MotionValue,
@@ -10,6 +11,8 @@ import {
 } from "motion/react";
 
 import { useRef, useState } from "react";
+import { Button } from "./button";
+import { useTheme } from "next-themes";
 
 export const FloatingDock = ({
   items,
@@ -23,7 +26,7 @@ export const FloatingDock = ({
   return (
     <>
       <FloatingDockDesktop items={items} className={desktopClassName} />
-      <FloatingDockMobile items={items} className={mobileClassName} />
+      {/* <FloatingDockMobile items={items} className={mobileClassName} /> */}
     </>
   );
 };
@@ -32,10 +35,16 @@ const FloatingDockMobile = ({
   items,
   className,
 }: {
-  items: { title: string; icon: React.ReactNode; href: string }[];
+  items: { title: string; icon: React.ReactNode; link: string }[];
   className?: string;
 }) => {
   const [open, setOpen] = useState(false);
+    const { theme, setTheme } = useTheme();
+
+
+  const toggleTheme = ()=>{
+    setTheme(theme === "dark" ? "light": "dark")
+  }
   return (
     <div className={cn("relative block md:hidden", className)}>
       <AnimatePresence>
@@ -44,6 +53,28 @@ const FloatingDockMobile = ({
             layoutId="nav"
             className="absolute inset-x-0 bottom-full mb-2 flex flex-col gap-2"
           >
+            
+            <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{ delay: (items.length - 1) * 0.05 }}
+            exit={{
+              opacity: 0,
+              y: 10,
+              transition: {
+                delay:  0.05,
+              },
+            }}
+            >
+              <Button  onClick={toggleTheme} size="icon" variant="secondary" className="rounded-full cursor-pointer !bg-backgroun- bg-muted h-12 w-12 border">
+                <Sun className="h-[1.2rem] w-[1.2rem] scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" />
+                <Moon className="absolute h-[1.2rem] w-[1.2rem] scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0" />
+                <span className="sr-only">Toggle theme</span>
+              </Button>
+            </motion.div>
             {items.map((item, idx) => (
               <motion.div
                 key={item.title}
@@ -62,9 +93,9 @@ const FloatingDockMobile = ({
                 transition={{ delay: (items.length - 1 - idx) * 0.05 }}
               >
                 <a
-                  href={item.href}
+                  href={item.link}
                   key={item.title}
-                  className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-50 dark:bg-neutral-900"
+                  className="flex h-12 w-12 items-center justify-center rounded-full bg-muted border"
                 >
                   <div className="h-4 w-4">{item.icon}</div>
                 </a>
@@ -75,10 +106,11 @@ const FloatingDockMobile = ({
       </AnimatePresence>
       <button
         onClick={() => setOpen(!open)}
-        className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-50 dark:bg-neutral-800"
+        className={`flex h-12 w-12 items-center justify-center rounded-full cursor-pointer ${open ? 'bg-primary text-white': 'bg-muted'}`}
       >
-        <IconLayoutNavbarCollapse className="h-5 w-5 text-neutral-500 dark:text-neutral-400" />
+        <IconLayoutNavbarCollapse className="h-5 w-5" />
       </button>
+      
     </div>
   );
 };

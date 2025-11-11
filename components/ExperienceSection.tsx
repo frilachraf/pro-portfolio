@@ -22,7 +22,7 @@ export async function ExperienceSection({
     return <p>No posts found.</p>;
   }
   return (
-    <section id="experiences" className="w-full max-w-screen-xl mx-auto px-6 xl:px-0 min-h-screen py-10">
+    <section id="experiences" className="w-full max-w-screen-xl-- mx-auto px-6 xl:px-0 min-h-screen py-10">
       <AppHeading2 text={title} />
       <AppHeadingDescription text={description} />
 

@@ -64,7 +64,7 @@ const ProjectsTimeline = ({ data , profile}: Timeline3Props) => {
       <div className="">
         <div className="relative grid gap-16 lg:grid-cols-3">
           <div className="top-40 h-fit lg:sticky lg:col-span-1">
-            <AppHeading2 text={content.heading}/>
+            <AppHeading2 text={content.heading} />
             <AppHeadingDescription text={content.description} />
 
             <div className="mt-8 flex flex-col gap-4 lg:flex-row">
@@ -99,7 +99,7 @@ const ProjectsTimeline = ({ data , profile}: Timeline3Props) => {
                     <h3 className="mb-1 text-2xl font-semibold">
                       {project?.name}
                     </h3>
-                    <p className="text-muted-foreground">
+                    <p className="text-muted-foreground line-clamp-3 sm:line-clamp-5">
                       {project?.description}
                     </p>
                     <div className="flex mt-10 items-center">

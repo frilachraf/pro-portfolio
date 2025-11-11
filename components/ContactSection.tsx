@@ -24,14 +24,14 @@ const ContactSection = ({
     return (
         <section id='contact' >
             <div className="min-h-screen flex items-center justify-center py-16">
-    <div className="w-full max-w-screen-xl mx-auto px-6 xl:px-0">
+    <div className="w-full max-w-screen-xl-- mx-auto px-6 xl:px-0">
       <b className="text-muted-foreground"></b>
       <AppHeading2 text={title}/>
       <AppHeadingDescription text={description} />
 
       <div className="mt-24 grid lg:grid-cols-2 gap-16 md:gap-10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-12">
-          <div className=''>
+        <div className="grid grid-cols-2 sm:grid-cols-2 gap-x-8 gap-y-12">
+          <div className='hover:bg-muted rounded-lg p-4 duration-75 transition-all'>
             <div className="h-12 w-12 flex items-center justify-center bg-primary/10 text-primary rounded-full">
               <MailIcon />
             </div>
@@ -44,7 +44,7 @@ const ContactSection = ({
               {profile?.email}
             </Link>}
           </div>
-          <div className=''>
+          <div className='hover:bg-muted rounded-lg p-4 duration-75 transition-all'>
             <div className="h-12 w-12 flex items-center justify-center bg-primary/10 text-primary rounded-full">
               <FaWhatsapp className='text-3xl' />
             </div>
@@ -53,7 +53,7 @@ const ContactSection = ({
               Chat <GoArrowRight className='text-xl text-primary'/>
             </Link>
           </div>
-          <div className=''>
+          <div className='hover:bg-muted rounded-lg p-4 duration-75 transition-all'>
             <div className="h-12 w-12 flex items-center justify-center bg-primary/10 text-primary rounded-full">
               <MapPinIcon />
             </div>
@@ -63,7 +63,7 @@ const ContactSection = ({
             </p>
             
           </div>
-          <div className=''>
+          <div className='hover:bg-muted rounded-lg p-4 duration-75 transition-all'>
             <div className="h-12 w-12 flex items-center justify-center bg-primary/10 text-primary rounded-full">
               <PhoneIcon />
             </div>

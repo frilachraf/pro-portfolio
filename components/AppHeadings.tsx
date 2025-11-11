@@ -8,7 +8,7 @@ export const AppHeading2 = ({text}:{text:string})=>{
 
 export const AppHeadingDescription = ({text}:{text:string})=>{
     return (
-       <p className="font-medium text-muted-foreground lg:text-xl">
+       <p className="font-medium text-muted-foreground lg:text-xl ">
         {text}
     </p>
     )

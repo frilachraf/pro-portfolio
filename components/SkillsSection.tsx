@@ -1,3 +1,4 @@
+
 import React from "react";
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -36,11 +37,11 @@ const SkillsSection: React.FC<SkillsSectionProps> = async ({
   const designs = technologies?.filter((tech) => tech.category === "design");
   const otherTools = technologies?.filter((tech) => !["frontend","backend","design"].includes(tech.category));
   return (
-    <section id="skills" className="py-20 text-s rounded-3xl bg- flex flex-col w-full max-w-screen-xl mx-auto px-6 xl:px-0">
+    <section id="skills" className="py-20 text-s rounded-3xl bg- flex flex-col w-full max-w-screen-xl-- mx-auto px-6 xl:px-0">
       <AppHeading2 text={title} />
       <AppHeadingDescription text={description} />
       <Tabs defaultValue="all" className="mt-10 gap-6 rounded-xl flex flex-row">
-        <TabsList className="mx-auto h-fit p-2 w-fit flex-col">
+        <TabsList className="mx-auto h-fit p-2 w-fit flex-col hidden sm:flex">
           <TabsTrigger className={TriggerclassName} value="all">
             <FaStarOfLife className="me-2 h-4 w-4" />
             All
@@ -66,7 +67,7 @@ const SkillsSection: React.FC<SkillsSectionProps> = async ({
           <TabsContent value="design">
             <div className="flex gap-4 flex-wrap justify-start">
               {designs &&
-                designs.map(({tech,i}:{tech:Skill,i: number}) => (<TechComponent key={i} data={tech}/>))}
+                designs.map((tech,i) => (<TechComponent key={i} data={tech}/>))}
             </div>
           </TabsContent>
           <TabsContent value="backend">
@@ -106,9 +107,9 @@ export default SkillsSection;
 
 const  TechComponent = ({data}:{data: Skill})=>{
     return (
-        <div className="bg-background rounded-lg px-4 py-2 border flex items-center gap-2">
+        <div className="bg-background dark:bg-muted grow rounded-lg px-4 py-2 border flex items-center gap-2">
                       {data.icon && (
-                        <div className="bg- rounded-full bg-white p-2 relative">
+                        <div className="bg- rounded-full bg-white p-2 relative" key={data.name}>
                             <Image
                                 fill
                                 src={data.icon}

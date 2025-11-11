@@ -17,7 +17,7 @@ const ProjectsSection = async () => {
 
   return (
     <section
-      className="w-full max-w-screen-xl mx-auto px-6 xl:px-0"
+      className="w-full max-w-screen-xl-- mx-auto px-6 xl:px-0 group"
       id="projects"
     >
       {projects && <ProjectsTimeline data={projects} />}
